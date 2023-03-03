@@ -1,0 +1,27 @@
+{
+  "cooperativeMembers": [
+    {
+      "document": "111.222.333-44",
+      "firstCardTitle": "Situação cadastral do CPF",
+      "firstCardSubtitle": "Consulta na Receita Federal",
+      "firstCardIsUserIcon": true,
+      "firstCardFirstLabel": "Nome",
+      "firstCardFirstValue": "Mariane de Sousa Oliveira",
+      "firstCardIsRegular": true,
+      "firstCardSecondLabel": "Situação do CPF",
+      "firstCardSecondValue": "Regular",
+      "secondCardTitle": "Conta aplicação",
+      "secondCardSubtitle": "Cooperativa Viacredi",
+      "secondCardIsUserIcon": false,
+      "secondCardFirstLabel": "Número da conta",
+      "secondCardFirstValue": "557932-4",
+      "secondCardButtonLabel": "Duplicar conta",
+      "thirdCardTitle": "Conta corrente",
+      "thirdCardSubtitle": "Cooperativa Viacredi",
+      "thirdCardIsUserIcon": false,
+      "thirdCardFirstLabel": "Número da conta",
+      "thirdCardFirstValue": "778461-8",
+      "thirdCardButtonLabel": "Duplicar conta"
+    }
+  ]
+}
