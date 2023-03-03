@@ -1,0 +1,30 @@
+::ng-deep {
+  .col {
+    padding: 0 !important;
+  }
+
+  .col-fixed {
+    padding: 0;
+  }
+
+  .container {
+    min-height: 100vh;
+  }
+
+  html,
+  body {
+    font-family: "Open Sans";
+    min-height: 100vh;
+    margin: 0;
+    height: 100vh;
+    padding: 0;
+  }
+
+  .p-button {
+    border-radius: 2px;
+  }
+}
+
+.content {
+  background-color: #e6eef1;
+}

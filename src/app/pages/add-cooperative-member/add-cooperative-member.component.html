@@ -1,0 +1,103 @@
+<div class="addCooperative">
+  <div id="pageContent">
+    <p-steps [model]="items"></p-steps>
+
+    <div>
+      <div class="titulo">Informe o CPF do futuro cooperado (a)</div>
+      <div class="legenda">
+        Se necessário, você poderá duplicar uma conta existente ou pausar e
+        retornar este cadastro futuramente.
+      </div>
+      <div class="legenda">Digite apenas os números (sem pontos ou traços)</div>
+    </div>
+
+    <div class="field mt-6">
+      <label for="cpf" class="block" style="font-weight: 600">CPF</label>
+      <div class="row">
+        <p-inputMask
+          (onKeydown)="disableError()"
+          class="inputForm"
+          id="partnerDocumentNumber"
+          name="partnerDocumentNumber"
+          [(ngModel)]="cpf"
+          mask="999.999.999-99"
+          placeholder="000.000.000-00"
+        ></p-inputMask>
+        <p-button
+          [disabled]="shouldShowInfo()"
+          class="ml-3"
+          (onClick)="validateCpf()"
+          >Consultar por CPF</p-button
+        >
+      </div>
+
+      <small *ngIf="shouldShowError()" id="cpf-help" class="p-error block"
+        >Informe um CPF válido</small
+      >
+    </div>
+
+    <div *ngIf="shouldShowInfo()">
+      <div class="card-container overflow-hidden">
+        <div class="flex flex-wrap">
+          <div class="flex-1 md:flex-none mr-4 mb-4">
+            <app-cooperative-info-card
+              [title]="cooperativeMember?.firstCardTitle ?? ''"
+              [subtitle]="cooperativeMember?.firstCardSubtitle ?? ''"
+              [isUserIcon]="cooperativeMember?.firstCardIsUserIcon ?? false"
+              [firstLabel]="cooperativeMember?.firstCardFirstLabel ?? ''"
+              [firstValue]="cooperativeMember?.firstCardFirstValue ?? ''"
+              [isRegular]="cooperativeMember?.firstCardIsRegular ?? false"
+              [secondLabel]="cooperativeMember?.firstCardSecondLabel ?? ''"
+              [secondValue]="cooperativeMember?.firstCardSecondValue ?? ''"
+            >
+            </app-cooperative-info-card>
+          </div>
+
+          <div class="flex-1 md:flex-none mr-4 mb-4">
+            <app-cooperative-info-card
+              [title]="cooperativeMember?.secondCardTitle ?? ''"
+              [subtitle]="cooperativeMember?.secondCardSubtitle ?? ''"
+              [isUserIcon]="cooperativeMember?.secondCardIsUserIcon ?? false"
+              [firstLabel]="cooperativeMember?.secondCardFirstLabel ?? ''"
+              [firstValue]="cooperativeMember?.secondCardFirstValue ?? ''"
+              [buttonLabel]="cooperativeMember?.secondCardButtonLabel ?? ''"
+            >
+            </app-cooperative-info-card>
+          </div>
+
+          <div class="flex-1 md:flex-none">
+            <app-cooperative-info-card
+              [title]="cooperativeMember?.thirdCardTitle ?? ''"
+              [subtitle]="cooperativeMember?.thirdCardSubtitle ?? ''"
+              [isUserIcon]="cooperativeMember?.thirdCardIsUserIcon ?? false"
+              [firstLabel]="cooperativeMember?.thirdCardFirstLabel ?? ''"
+              [firstValue]="cooperativeMember?.thirdCardFirstValue ?? ''"
+              [buttonLabel]="cooperativeMember?.thirdCardButtonLabel ?? ''"
+            >
+            </app-cooperative-info-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="grid align-items-center py-5">
+    <button
+      *ngIf="shouldShowInfo()"
+      pButton
+      type="button"
+      label="Iniciar nova admissão"
+      style="padding-inline: 20px"
+      (click)="newAdmission()"
+    ></button>
+    <button
+      pButton
+      type="button"
+      label="Dicas para admissão"
+      class="p-button-outlined ml-3"
+      style="padding-inline: 20px"
+    ></button>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.sidebar {
+  background-color: var(--primary-color);
+}
+
+.logo {
+  height: 60px;
+}
+
+.link:hover {
+  background-color: #013f5c;
+  cursor: pointer;
+  align-items: align-items-center;
+  justify-content: center;
+  padding: 15px;
+}
+
+::ng-deep {
+  .svg-inline--fa {
+    height: 25px;
+    color: white;
+  }
+}
