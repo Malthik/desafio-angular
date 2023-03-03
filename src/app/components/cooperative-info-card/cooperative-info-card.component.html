@@ -1,0 +1,43 @@
+<div class="infoCard">
+  <div class="tituloCard">{{ title }}</div>
+  <div class="legenda">{{ subtitle }}</div>
+  <div class="grid mt-3">
+    <div class="col-fixed" style="width: 30px">
+      <i
+        [class]="isUserIcon ? 'icon pi pi-user' : 'icon pi pi-credit-card'"
+      ></i>
+    </div>
+
+    <div class="col">
+      <div class="legenda">
+        {{ firstLabel }}
+      </div>
+      <div class="valor">
+        {{ firstValue }}
+      </div>
+    </div>
+  </div>
+  <div *ngIf="buttonLabel == null" class="grid mt-3">
+    <div class="col-fixed" style="width: 30px">
+      <i
+        [class]="
+          isRegular
+            ? 'icon pi pi-verified verde'
+            : 'icon pi pi-exclamation-circle vermelho'
+        "
+      ></i>
+    </div>
+
+    <div class="col">
+      <div class="legenda">
+        {{ secondLabel }}
+      </div>
+      <div class="valor">
+        {{ secondValue }}
+      </div>
+    </div>
+  </div>
+  <div *ngIf="buttonLabel != null" class="row mt-3">
+    <a href="javascript:void(0)">{{ buttonLabel }}</a>
+  </div>
+</div>
